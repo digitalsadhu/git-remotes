@@ -1,0 +1,23 @@
+{
+  "name": "git-remotes",
+  "version": "1.0.0",
+  "description": "Fetch git remotes (A nice parsed version of `git remote -v`)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalsadhu/git-remotes.git"
+  },
+  "keywords": [
+    "git",
+    "remote"
+  ],
+  "author": "Richard Walker <digitalsadhu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digitalsadhu/git-remotes/issues"
+  },
+  "homepage": "https://github.com/digitalsadhu/git-remotes#readme"
+}
