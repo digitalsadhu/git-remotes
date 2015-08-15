@@ -12,14 +12,14 @@ module.exports = function gitRemotes(dir, cb) {
   var error = null
 
   gitRemote.stdout
-    .on('data', function (data) {
+    .on('data', function processRemotes(data) {
       if (!data) return
 
       remotes = data.toString().split(os.EOL)
-        .filter(function (remote) {
+        .filter(function filterOnlyFetchRows(remote) {
           return remote.match('(fetch)')
         })
-        .map(function (remote) {
+        .map(function mapRemoteLineToObject(remote) {
           var parts = remote.split('\t')
           if (parts.length < 2) return
 
