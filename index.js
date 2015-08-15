@@ -9,6 +9,7 @@ module.exports = function gitRemotes(dir, cb) {
 
   var gitRemote = spawn('git', ['remote', '-v'], { cwd: dir })
   var remotes = []
+  var error = null
 
   gitRemote.stdout
     .on('data', function (data) {
@@ -21,17 +22,18 @@ module.exports = function gitRemotes(dir, cb) {
         .map(function (remote) {
           var parts = remote.split('\t')
           if (parts.length < 2) return
-          
+
           return {
             name: parts[0],
             url: parts[1].replace('(fetch)', '').trim()
           }
         })
     })
-    .on('error', function returnError(err) {
-      cb(err)
+    .on('error', function setError(err) {
+      error = err
     })
-    .on('end', function returnRemotesArray() {
+    .on('end', function returnRemotesArrayOrError() {
+      if (error) return cb(error)
       cb(null, remotes)
     })
 }
