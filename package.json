@@ -4,7 +4,7 @@
   "description": "Fetch git remotes (A nice parsed version of `git remote -v`)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test --reporter=spec"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/digitalsadhu/git-remotes/issues"
   },
-  "homepage": "https://github.com/digitalsadhu/git-remotes#readme"
+  "homepage": "https://github.com/digitalsadhu/git-remotes#readme",
+  "devDependencies": {
+    "expect": "^1.9.0",
+    "mocha": "^2.2.5"
+  }
 }
