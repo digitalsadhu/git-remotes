@@ -27,7 +27,7 @@ describe('git-remotes module', function () {
       gr(function (err, remotes) {
         expect(err).toBe(null)
         expect(remotes[0].name).toBe('origin')
-        expect(remotes[0].url).toBe('git@github.com:digitalsadhu/git-remotes.git')
+        expect(remotes[0].url).toMatch(/digitalsadhu\/git-remotes\.git/)
         done()
       })
     })
@@ -42,7 +42,7 @@ describe('git-remotes module', function () {
     })
   })
   describe('reading from a directory with several remotes', function () {
-    it ('should return an array with several remote entries', function () {
+    it ('should return an array with several remote entries', function (done) {
       gr(__dirname + '/fake-app', function (err, remotes) {
         expect(err).toBe(null)
         expect(remotes.length).toBe(2)

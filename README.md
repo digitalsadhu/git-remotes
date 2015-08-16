@@ -23,6 +23,15 @@ gitRemotes(function (err, remotes) {
 })
 ```
 
+Retrieving git remotes for a specified directory
+```js
+var gitRemotes = require('git-remotes');
+
+gitRemotes('./path/to/directory', function (err, remotes) {
+  // ...
+})
+```
+
 ## Remote objects
 
 Remote objects look like:
