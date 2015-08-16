@@ -1,4 +1,8 @@
-# git-remotes [![Build Status](https://travis-ci.org/digitalsadhu/git-remotes.svg?branch=master)](https://travis-ci.org/digitalsadhu/git-remotes)
+git-remotes [![Build Status](https://travis-ci.org/digitalsadhu/git-remotes.svg?branch=master)](https://travis-ci.org/digitalsadhu/git-remotes)
+==========
+
+[![NPM](https://nodei.co/npm/git-remotes.png?compact=true)](https://npmjs.org/package/git-remotes)
+
 Fetch git remotes (A nice parsed version of `git remote -v`).
 
 Runs `git remote -v`, grabs the result, parses each remote out of it and produces an array of objects out of it.
